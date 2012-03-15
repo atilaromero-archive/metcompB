@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#define N 1000
 
 void imprime(float *lista, int size){
   int i;
   for (i=0;i<size;i++){
     printf("%f\n",lista[i]);
   }
-  printf("\n");
+  printf("%i linhas\n",size);
 }
 int ordena(float *lista, int size){
   int i;
@@ -17,12 +18,12 @@ int ordena(float *lista, int size){
   while(troca){
     troca=0;
     for(i=0;i<(size-1);i++){
+      passos++;
       if (lista[i]>lista[i+1]){
 	temp=lista[i];
 	lista[i]=lista[i+1];
 	lista[i+1]=temp;
 	troca=1;
-	passos++;
       }
     }
   }
@@ -37,12 +38,12 @@ int ordena2(float *lista, int size){
   int passos=0;
   while(troca){
     for(i=0;i<troca;i++){
+      passos++;
       if (lista[i]>lista[i+1]){
 	temp=lista[i];
 	lista[i]=lista[i+1];
 	lista[i+1]=temp;
 	newtroca=i;
-	passos++;
       }
     }
     troca=newtroca;
@@ -51,13 +52,16 @@ int ordena2(float *lista, int size){
 }
 
 void main(){
-  float a[5];
-  a[0]=410;
-  a[1]=20;
-  a[2]=510;
-  a[3]=310;
-  a[4]=10;
-  int size=5;
-  printf("passos: %i\n",ordena2(a,size));
-  imprime(a,size);
+  FILE *in;
+  int i;
+  float lista[N];
+  float lista2[N];
+  in=fopen("dados.txt","r");
+  for(i=0; (!feof(in));i++){
+    fscanf(in,"%f",&lista[i]);
+    lista2[i]=lista[i];
+  }
+  imprime(lista,i);
+  printf("passos: %i\n",ordena(lista,i));
+  printf("passos: %i\n",ordena2(lista2,i));
 }
