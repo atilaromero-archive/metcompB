@@ -1,0 +1,4 @@
+trab01
+teste01	sort
+trab02
+trab03	exp
