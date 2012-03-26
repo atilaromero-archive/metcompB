@@ -27,9 +27,11 @@ def main(path):
             print 'erro absoluto=%s'%str(erroabs)
             print 'erro relativo=%s'%str(errorel)
             print
+        xs=gerat(x0,xfim,deltat/10)
+        ysreal=geraexpreal(xs,y0,lamb)
         vetores+=[ysreal]
         pylab.plot(xs,ysreal,'-',label='exp(lambda*t)')
-        pylab.legend()
+        pylab.legend(loc=9)
         pylab.savefig('plot.eps',format='eps')
         print 'grafico salvo em plot.eps'
         pylab.show()

@@ -1,0 +1,7 @@
+1. f'=Df
+
+2. D=-2
+   tempo caracteristico -> 1
+   dados.dat -> valor inicial, tempo inicial, tempo final, N, tempo caracteristico
+
+3. 
