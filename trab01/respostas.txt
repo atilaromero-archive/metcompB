@@ -1,7 +1,12 @@
-1. f'=Df
+1. decaimento radioativo, f'=lambda f, com lambda < 0 
 
-2. D=-2
-   tempo caracteristico -> 1
-   dados.dat -> valor inicial, tempo inicial, tempo final, N, tempo caracteristico
+3. lambda = log(0.5)
+   tempo caracteristico = 1
+   valor inicial = 100 * 2^10
+   dados.dat -> valor inicial, tempo inicial, tempo final, lambda, delta t
 
-3. 
+6. delta t = 0.1
+   tempo total = 3
+
+7. delta t = 0.01, 0.05, 0.1, 0.2
+   tempo total = 2

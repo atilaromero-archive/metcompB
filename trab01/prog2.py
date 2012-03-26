@@ -6,27 +6,17 @@ import os
 
 def main(path):
     with open(path)as f:
+        xs=[]
+        ys=[]
         for line in f:
             y0,x0,xfim,lamb,deltat = [float(x) for x in line.split()]
-            xs=gerat(x0,xfim,deltat)#monta os valores do eixo x
-            ys=geraexp(xs,y0,lamb,deltat)#calcula os valores do eixo y
-            #faz as linhas no grafico
-            pylab.plot(xs,ys,'o-',label='lambda=%s; delta t=%s'%(lamb,str(deltat)))
-            ysreal=geraexpreal(xs,y0,lamb)
-            erroabs=numpy.abs(ysreal[-1]-ys[-1])
-            errorel=numpy.abs(erroabs/ys[-1])
-            print 'y0=%s'%str(y0)
-            print 'x0=%s'%str(x0)
-            print 'xfim=%s'%str(xfim)
-            print 'lamb=%s'%str(lamb)
-            print 'deltat=%s'%str(deltat)
-            print 'ultimo (x,ycalculado,yreal)=(%f,%f,%f)'%(xs[-1],ys[-1],ysreal[-1])
-            print 'erro absoluto=%s'%str(erroabs)
-            print 'erro relativo=%s'%str(errorel)
-            print
-        xs=gerat(x0,xfim,deltat/10)#calcula exp(lambda*t) em intervalos de deltat/10
-        ysreal=geraexpreal(xs,y0,lamb)#idem
-        pylab.plot(xs,ysreal,'-',label='exp(lambda*t)')#plota valor teorico
+            xtemp=gerat(x0,xfim,deltat)  #valores de x
+            vcalc=geraexp(xtemp,y0,lamb,deltat)[-1]#ultimo valor de y
+            vreal=geraexpreal(xtemp,y0,lamb)[-1]
+            errorel=numpy.abs((vcalc-vreal)/vreal)
+            xs+=[deltat]
+            ys+=[errorel]
+        pylab.plot(xs,ys,'o-',label='erro relativo')
         pylab.legend(loc=9)#inclui a legenda, loc=9 poe a legenda em cima no centro
         fig=path+'.eps'
         pylab.savefig(fig,format='eps')
