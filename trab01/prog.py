@@ -11,7 +11,7 @@ def main(path):
             xs=gerat(x0,xfim,deltat)#monta os valores do eixo x
             ys=geraexp(xs,y0,lamb,deltat)#calcula os valores do eixo y
             #faz as linhas no grafico
-            pylab.plot(xs,ys,'o-',label='lambda=%s; delta t=%s'%(lamb,str(deltat)))
+            pylab.plot(xs,ys,'o-',label='$\lambda$=%s; delta t=%s'%(lamb,str(deltat)))
             ysreal=geraexpreal(xs,y0,lamb)
             erroabs=numpy.abs(ysreal[-1]-ys[-1])
             errorel=numpy.abs(erroabs/ys[-1])
@@ -26,11 +26,13 @@ def main(path):
             print
         xs=gerat(x0,xfim,deltat/10)#calcula exp(lambda*t) em intervalos de deltat/10
         ysreal=geraexpreal(xs,y0,lamb)#idem
-        pylab.plot(xs,ysreal,'-',label='exp(lambda*t)')#plota valor teorico
+        pylab.plot(xs,ysreal,'-',label='$e^{\lambda t}$')#plota valor teorico
+        pylab.xlabel('tempo')
+        pylab.ylabel('$e^{\lambda t}$',fontsize='large')
         pylab.legend(loc=9)#inclui a legenda, loc=9 poe a legenda em cima no centro
-        fig=path+'.eps'
-        pylab.savefig(fig,format='eps')
-        print 'grafico salvo em '+fig
+        #fig=path+'.eps'
+        #pylab.savefig(fig,format='eps')
+        #print 'grafico salvo em '+fig
         pylab.show()#mostra o grafico
 
 #gera os valores de x, com intervalos de deltat

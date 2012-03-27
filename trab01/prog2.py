@@ -16,8 +16,10 @@ def main(path):
             errorel=numpy.abs((vcalc-vreal)/vreal)
             xs+=[deltat]
             ys+=[errorel]
-        pylab.plot(xs,ys,'o-',label='erro relativo')
-        pylab.legend(loc=9)#inclui a legenda, loc=9 poe a legenda em cima no centro
+        pylab.xlabel(r'$\Delta$t')
+        pylab.ylabel(r'Erro relativo')
+        pylab.plot(xs,ys,'o-')
+        #pylab.legend(loc=9)#inclui a legenda, loc=9 poe a legenda em cima no centro
         fig=path+'.eps'
         pylab.savefig(fig,format='eps')
         print 'grafico salvo em '+fig

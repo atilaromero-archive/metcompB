@@ -1,12 +1,12 @@
 %!PS-Adobe-3.0 EPSF-3.0
 %%Title: dados2.dat.eps
 %%Creator: matplotlib version 1.0.1, http://matplotlib.sourceforge.net/
-%%CreationDate: Mon Mar 26 18:08:11 2012
+%%CreationDate: Tue Mar 27 00:03:46 2012
 %%Orientation: portrait
 %%BoundingBox: 18 180 594 612
 %%EndComments
 %%BeginProlog
-/mpldict 8 dict def
+/mpldict 9 dict def
 mpldict begin
 /m { moveto } bind def
 /l { lineto } bind def
@@ -42,7 +42,7 @@ newpath
 /FontMatrix[.001 0 0 .001 0 0]def
 /FontBBox[-1020 -414 1681 1167]def
 /FontType 3 def
-/Encoding [ /space /period /zero /one /two /four /five /six /eight /a /e /i /l /o /r /t /v ] def
+/Encoding [ /space /period /zero /one /two /four /five /six /eight /E /a /e /i /l /o /r /t /v ] def
 /FontInfo 10 dict dup begin
 /FamilyName (DejaVu Sans) def
 /FullName (DejaVu Sans) def
@@ -54,7 +54,7 @@ newpath
 /UnderlinePosition -130 def
 /UnderlineThickness 90 def
 end readonly def
-/CharStrings 17 dict dup begin
+/CharStrings 18 dict dup begin
 /space{318 0 0 0 0 0 _sc
 }_d
 /period{318 0 107 0 210 124 _sc
@@ -231,6 +231,21 @@ _cl}_e}_d
 275 664 242 653 218 632 _c
 194 611 183 582 183 544 _c
 _cl}_e}_d
+/E{632 0 98 0 568 729 _sc
+98 729 _m
+559 729 _l
+559 646 _l
+197 646 _l
+197 430 _l
+544 430 _l
+544 347 _l
+197 347 _l
+197 83 _l
+568 83 _l
+568 0 _l
+98 0 _l
+98 729 _l
+_cl}_d
 /a{{613 0 60 -13 522 560 _sc
 343 275 _m
 270 275 220 266 192 250 _c
@@ -373,6 +388,70 @@ _cl}_d
 357 0 _l
 235 0 _l
 30 547 _l
+_cl}_d
+end readonly def
+
+/BuildGlyph
+ {exch begin
+ CharStrings exch
+ 2 copy known not{pop /.notdef}if
+ true 3 1 roll get exec
+ end}_d
+
+/BuildChar {
+ 1 index /Encoding get exch get
+ 1 index /BuildGlyph get exec
+}_d
+
+FontName currentdict end definefont pop
+%!PS-Adobe-3.0 Resource-Font
+%%Title: cmr10
+%%Copyright: Copyright (C) 1994, Basil K. Malyshev. All Rights Reserved.012BaKoMa Fonts Collection, Level-B.
+%%Creator: Converted from TrueType to type 3 by PPR
+25 dict begin
+/_d{bind def}bind def
+/_m{moveto}_d
+/_l{lineto}_d
+/_cl{closepath eofill}_d
+/_c{curveto}_d
+/_sc{7 -1 roll{setcachedevice}{pop pop pop pop pop pop}ifelse}_d
+/_e{exec}_d
+/FontName /Cmr10 def
+/PaintType 0 def
+/FontMatrix[.001 0 0 .001 0 0]def
+/FontBBox[-43 -249 1009 750]def
+/FontType 3 def
+/Encoding [ /Delta ] def
+/FontInfo 10 dict dup begin
+/FamilyName (cmr10) def
+/FullName (cmr10) def
+/Notice (Copyright (C) 1994, Basil K. Malyshev. All Rights Reserved.012BaKoMa Fonts Collection, Level-B. ) def
+/Weight (Regular) def
+/Version (1.1/12-Nov-94) def
+/ItalicAngle 0.0 def
+/isFixedPitch false def
+/UnderlinePosition -133 def
+/UnderlineThickness 20 def
+end readonly def
+/CharStrings 1 dict dup begin
+/Delta{833 0 46 0 786 716 _sc
+54 0 _m
+48 0 46 2 46 8 _c
+46 8 46 9 46 9 _c
+46 9 47 10 47 11 _c
+391 705 _l
+394 712 400 716 409 716 _c
+423 716 _l
+432 716 438 712 441 705 _c
+785 11 _l
+785 10 786 9 786 9 _c
+786 9 786 8 786 8 _c
+786 2 783 0 778 0 _c
+54 0 _l
+120 80 _m
+647 80 _l
+384 611 _l
+120 80 _l
 _cl}_d
 end readonly def
 
@@ -550,7 +629,7 @@ grestore
 183.6 388.8 o
 grestore
 gsave
-171.154688 30.121875 translate
+171.154687 30.121875 translate
 0.000000 rotate
 0.000000 0.171875 m /zero glyphshow
 7.634766 0.171875 m /period glyphshow
@@ -582,7 +661,7 @@ grestore
 295.2 388.8 o
 grestore
 gsave
-282.629688 30.121875 translate
+282.629687 30.121875 translate
 0.000000 rotate
 0.000000 0.171875 m /zero glyphshow
 7.634766 0.171875 m /period glyphshow
@@ -646,12 +725,29 @@ grestore
 518.4 388.8 o
 grestore
 gsave
-505.829688 30.121875 translate
+505.829687 30.121875 translate
 0.000000 rotate
 0.000000 0.171875 m /zero glyphshow
 7.634766 0.171875 m /period glyphshow
 11.449219 0.171875 m /two glyphshow
 19.083984 0.171875 m /zero glyphshow
+grestore
+gsave
+287.700000 16.121875 translate
+0.000000 rotate
+/Cmr10 findfont
+12.0 scalefont
+setfont
+0.000000 0.406250 moveto
+/Delta glyphshow
+
+/DejaVuSans findfont
+12.0 scalefont
+setfont
+9.996094 0.406250 moveto
+/t glyphshow
+
+
 grestore
 gsave
 /o {
@@ -941,6 +1037,23 @@ gsave
 11.449219 0.171875 m /one glyphshow
 19.083984 0.171875 m /six glyphshow
 grestore
+gsave
+37.734375 179.648438 translate
+90.000000 rotate
+0.000000 0.171875 m /E glyphshow
+7.582031 0.171875 m /r glyphshow
+12.265625 0.171875 m /r glyphshow
+16.949219 0.171875 m /o glyphshow
+24.291016 0.171875 m /space glyphshow
+28.105469 0.171875 m /r glyphshow
+32.789062 0.171875 m /e glyphshow
+40.171875 0.171875 m /l glyphshow
+43.505859 0.171875 m /a glyphshow
+50.859375 0.171875 m /t glyphshow
+55.564453 0.171875 m /i glyphshow
+58.898438 0.171875 m /v glyphshow
+66.000000 0.171875 m /o glyphshow
+grestore
 1.000 setlinewidth
 2 setlinecap
 gsave
@@ -962,73 +1075,6 @@ gsave
 72 43.2 m
 72 388.8 l
 stroke
-grestore
-gsave
-225.897 359.236 m
-364.503 359.236 l
-364.503 381.6 l
-225.897 381.6 l
-225.897 359.236 l
-cl
-gsave
-1.000 setgray
-fill
-grestore
-stroke
-grestore
-0.000 0.000 1.000 setrgbcolor
-gsave
-235.977 370.239 m
-256.137 370.239 l
-stroke
-grestore
-0.500 setlinewidth
-0 setlinecap
-0.000 setgray
-gsave
-/o {
-gsave
-newpath
-translate
-0 -3 m
-0.795609 -3 1.55874 -2.6839 2.12132 -2.12132 c
-2.6839 -1.55874 3 -0.795609 3 0 c
-3 0.795609 2.6839 1.55874 2.12132 2.12132 c
-1.55874 2.6839 0.795609 3 0 3 c
--0.795609 3 -1.55874 2.6839 -2.12132 2.12132 c
--2.6839 1.55874 -3 0.795609 -3 0 c
--3 -0.795609 -2.6839 -1.55874 -2.12132 -2.12132 c
--1.55874 -2.6839 -0.795609 -3 0 -3 c
-cl
-gsave
-0.000 0.000 1.000 setrgbcolor
-fill
-grestore
-stroke
-grestore
-} bind def
-235.977 370.239 o
-256.137 370.239 o
-grestore
-/DejaVuSans findfont
-14.400 scalefont
-setfont
-gsave
-271.977188 364.996250 translate
-0.000000 rotate
-0.000000 0.203125 m /e glyphshow
-8.853607 0.203125 m /r glyphshow
-14.520065 0.203125 m /r glyphshow
-20.061523 0.203125 m /o glyphshow
-28.865936 0.203125 m /space glyphshow
-33.440292 0.203125 m /r glyphshow
-38.981750 0.203125 m /e glyphshow
-47.835358 0.203125 m /l glyphshow
-51.833527 0.203125 m /a glyphshow
-60.651993 0.203125 m /t glyphshow
-66.294403 0.203125 m /i glyphshow
-70.292572 0.203125 m /v glyphshow
-78.808899 0.203125 m /o glyphshow
 grestore
 
 end

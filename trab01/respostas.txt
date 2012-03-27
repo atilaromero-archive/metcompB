@@ -1,12 +1,22 @@
 1. decaimento radioativo, f'=lambda f, com lambda < 0 
 
-3. lambda = log(0.5)
+3. lambda = log(0.5) = -0.69314718055994526
    tempo caracteristico = 1
-   valor inicial = 100 * 2^10
-   dados.dat -> valor inicial, tempo inicial, tempo final, lambda, delta t
+   valor inicial = 100 * 2^10 = 102400
 
-6. delta t = 0.1
+4. prog.py -> 	    plota exp(lambda t) vs t
+   prog1.py -> 	    plota Ef vs t
+   prog2.py ->      plota Ef vs delta t
+   dados.dat ->     valor inicial, tempo inicial, tempo final, lambda, delta t
+   geradados.py ->  gera dados2.dat, com varios delta t
+
+6. ./prog1.py dados1.dat
+   delta t = 0.1
    tempo total = 3
+   O erro aumenta linearmente com o tempo, porque a cada passo de tempo o erro total amenta. 
+   
 
-7. delta t = 0.01, 0.05, 0.1, 0.2
+7. ./prog2.py dados2.dat
+   delta t de  0.01 a 0.2 com incrementos de 0.01
    tempo total = 2
+   O erro relativo total aumenta linearmente com o passo de tempo.

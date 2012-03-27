@@ -9,16 +9,17 @@ def main(path):
         for line in f:
             y0,x0,xfim,lamb,deltat = [float(x) for x in line.split()]
             xs=gerat(x0,xfim,deltat)#monta os valores do eixo x
-            ys=geraexp(xs,y0,lamb,deltat)#calcula os valores do eixo y
+            ys=geraexp(xs,y0,lamb,deltat)#calcula os valores de exp(lambda*t)
             ysreal=geraexpreal(xs,y0,lamb)
-            errorel=[numpy.abs((a-b)/b) for (a,b) in zip(ys, ysreal)]
+            errorel=[numpy.abs((a-b)/b) for (a,b) in zip(ys, ysreal)]#lista de erros relativos
             #faz as linhas no grafico
-            print errorel
-            pylab.plot(xs,errorel,'o-',label='erro relativo')
+            pylab.plot(xs,errorel,'o-')
         #xs=gerat(x0,xfim,deltat/10)#calcula exp(lambda*t) em intervalos de deltat/10
         #ysreal=geraexpreal(xs,y0,lamb)#idem
         #pylab.plot(xs,ysreal,'-',label='exp(lambda*t)')#plota valor teorico
-        pylab.legend(loc=9)#inclui a legenda, loc=9 poe a legenda em cima no centro
+        pylab.xlabel('tempo')
+        pylab.ylabel('Erro relativo')
+        #pylab.legend(loc=9)#inclui a legenda, loc=9 poe a legenda em cima no centro
         fig=path+'.eps'
         pylab.savefig(fig,format='eps')
         print 'grafico salvo em '+fig
