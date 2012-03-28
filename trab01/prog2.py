@@ -18,11 +18,11 @@ def main(path):
             ys+=[errorel]
         pylab.xlabel(r'$\Delta$t')
         pylab.ylabel(r'Erro relativo')
-        pylab.plot(xs,ys,'o-')
+        pylab.plot(xs,ys,'+-')
         #pylab.legend(loc=9)#inclui a legenda, loc=9 poe a legenda em cima no centro
         fig=path+'.eps'
-        pylab.savefig(fig,format='eps')
-        print 'grafico salvo em '+fig
+        #pylab.savefig(fig,format='eps')
+        #print 'grafico salvo em '+fig
         pylab.show()#mostra o grafico
 
 #gera os valores de x, com intervalos de deltat

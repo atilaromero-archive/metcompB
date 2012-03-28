@@ -13,7 +13,7 @@ def main(path):
             ysreal=geraexpreal(xs,y0,lamb)
             errorel=[numpy.abs((a-b)/b) for (a,b) in zip(ys, ysreal)]#lista de erros relativos
             #faz as linhas no grafico
-            pylab.plot(xs,errorel,'o-')
+            pylab.plot(xs,errorel,'+-')
         #xs=gerat(x0,xfim,deltat/10)#calcula exp(lambda*t) em intervalos de deltat/10
         #ysreal=geraexpreal(xs,y0,lamb)#idem
         #pylab.plot(xs,ysreal,'-',label='exp(lambda*t)')#plota valor teorico
@@ -21,8 +21,8 @@ def main(path):
         pylab.ylabel('Erro relativo')
         #pylab.legend(loc=9)#inclui a legenda, loc=9 poe a legenda em cima no centro
         fig=path+'.eps'
-        pylab.savefig(fig,format='eps')
-        print 'grafico salvo em '+fig
+        #pylab.savefig(fig,format='eps')
+        #print 'grafico salvo em '+fig
         pylab.show()#mostra o grafico
 
 #gera os valores de x, com intervalos de deltat
