@@ -15,18 +15,18 @@ def main(k,m,x,v,t0,tf,dt):
         #euler
         vtemp=v1
         v1=v1-w2*x1*dt
-        x1=x1+vtemp*dt
+        x1=x1+v1*dt
         e1=(k*x1**2+m*v1**2)/2
         ys1+=[x1]
         es1+=[e1]
     #pylab.plot(xs,ys1,'-',label='x(t) - Euler')
     e0=(k*x**2+m*v**2)/2
     incl=numpy.log(e1-e0)/(tf-t0)
-    pylab.plot(xs,es1,'-',label='E(t); dt=%f;incl=%f'%(dt,incl))
+    pylab.plot(xs,es1,'-',label='E(t); dt=%f'%(dt))
     pylab.xlabel('t')
     pylab.ylabel('E')
     pylab.yscale('log')
-    pylab.legend(loc=2)
+    pylab.legend(loc=8)
     for x,y1,e1 in zip(xs,ys1,es1):
         print x, y1, e1
 
