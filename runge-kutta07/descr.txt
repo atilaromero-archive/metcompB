@@ -1,0 +1,8 @@
+f1(x+dx/2)=f(x)+f'(x)dx/2
+f2(x+dx/2)=f(x)+f1'(x+dx/2)dx/2
+    =f(x)+1/2f'(x)
+f3(x+dx)=f(x)+f2'(x+dx/2)dx/2
+f(x+dx)=f(x)+1/6[f'(x)+2f1'(x+dx/2)+2f2'(x+dx/2)+f3'(x+dx)]dx
+
+taylor:
+f(x+dx)=f(x)+f'(x)dx+1/2f''(x)dx^2

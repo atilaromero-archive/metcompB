@@ -2,7 +2,10 @@
 import numpy
 import pylab
 #se w2 = 1, w=1, T=2piw=2pi=6.2832
-#./quest3.py 1 1 1 0 0 25.1328 0.06 0.24 0.42 0.60
+#./quest3.py 1 1 1 0 0 25.1328 0.6
+#./quest3.py 1 1 1 0 0 25.1328 0.24
+#./quest3.py 1 1 1 0 0 25.1328 0.42
+#./quest3.py 1 1 1 0 0 25.1328 0.60
 
 def main(k,m,x,v,t0,tf,dt):
     xs=numpy.arange(t0,tf+dt/2,dt)
@@ -24,7 +27,7 @@ def main(k,m,x,v,t0,tf,dt):
     incl=numpy.log(e1-e0)/(tf-t0)
     pylab.plot(xs,es1,'-',label='E(t); dt=%f;incl=%f'%(dt,incl))
     pylab.xlabel('t')
-    pylab.ylabel('E')
+    pylab.ylabel('x')
     pylab.yscale('log')
     pylab.legend(loc=2)
     for x,y1,e1 in zip(xs,ys1,es1):
