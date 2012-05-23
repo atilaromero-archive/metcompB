@@ -1,28 +1,27 @@
 #!/usr/bin/python
-import numpy
-import pylab
-#./prog.py 1 1 1 0 0.2 0 300 0.01
 
-def main(k,m,x,v,gamma,t0,tf,dt):
-    ts=numpy.arange(t0,tf+dt/2,dt)
-    w2=k/m
-    def a(x):
-        return -w2*x
-    def e(x,v):
-        return (k*x**2+m*v**2)/2
-    xleapfrog=[x]
-    vleapfrog=[v] 
-    eleapfrog=[e(x,v)]
-    g1=1/(1+gamma*dt/2)
-    g2=1-gamma*dt/2
-    v=g1*(g2*v+a(x)*dt/2)
-    for t in ts:
-        #leapfrog
+def a(x):
+    return -w2*x
+def e(x,v):
+    return (k*x**2+m*v**2)/2
+class LeapFrog():
+    def __init__(self,v0,dt,gamma=0):
+        self.g1=1/(1+gamma*dt/2)
+        self.g2=1-gamma*dt/2
+        self.v=g1*(g2*v0+a(x)*dt/2)
+        pass
+    def next():
         vt=v
         xleapfrog+=[xleapfrog[-1]+v*dt]
         v=g1*(g2*v+a(xleapfrog[-1])*dt)
         vleapfrog+=[(vt+v)/2]
         eleapfrog+=[e(xleapfrog[-1],vleapfrog[-1])]
+
+
+
+def main(k,m,x,v,gamma,t0,tf,dt):
+    for t in ts:
+
     pylab.plot(ts,xleapfrog[:-1],'-',label='x(t) - LeapFrog')
     pylab.plot(ts,eleapfrog[:-1],'-',label='E(t) - LeapFrog')
     pylab.xlabel('t')
