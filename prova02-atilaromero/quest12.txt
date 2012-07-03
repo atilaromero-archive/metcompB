@@ -1,0 +1,1 @@
+Entre 0.1, 0.01 e 0.001, o valor escolhido para dt foi 0.01, porque 0.1 apresentou um erro relativo visivelmente grande e 0.001 ofereceu praticamente os mesmos resultados que 0.01.

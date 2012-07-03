@@ -1,0 +1,7 @@
+3. Na figura 1, percebe-se que quanto mais jogadas, mais concentrada é a distribuição dos resultados. Na figura2, percebe-se que os resultados seguem uma distribuição gaussiana.
+
+4. N: 5000
+M: 100
+media: 1.480000
+desvio padrao: 10.336808
+

@@ -1,0 +1,8 @@
+U=integral(dr,f)
+f= d/dr U
+ = d/dr [g exp(-m r)/r]
+ = g(-m exp(-m r)/r *exp(-m r)/-r^2)
+ = g(m exp(-2mr)/r^3)
+
+se g=m=1,
+f=exp(-2r)/r^3
