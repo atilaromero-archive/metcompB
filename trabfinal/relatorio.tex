@@ -37,7 +37,7 @@
 %%% fim do cabecalho %%%
 
 \pagestyle{empty}
-\title{Métodos Computacionais da Física B \\ Amortecimento devido à resistência do ar}
+\title{Métodos Computacionais da Física B \\ Amortecimento em um fluido}
 \author{Aluno: Átila Leites Romero - Matrícula: 144679 \\ IF-UFRGS}
 
 \begin{document}
@@ -55,8 +55,7 @@
 % Aqui a Introdução \c{c} e \~a  é a forma standar  de escrever
 % carateres ASCII extendidos (acentos, etc), porem com o pacote t1enc
 % declarado acima podemos escrever diretamente ç em lugar d \c{c}, etc
-É comum que o amortecimento de um corpo dependa linearmente ou quadraticamente da velocidade. 
-Existem situações em que o amortecimento depende simultâneamente destes dois fatores, o que dificulta a obtenção de uma solução analítica.
+Neste trabalho, são comparados dois modelos para o amortecimento de um corpo em movimento em um fluido, ambos dependentes da velocidade, porém um dependentee linearmente e o outro quadraticamente. Os modelos também podem ser combinados em um único.
 
 Um exemplo de sistema físico onde isto ocorre é no amortecimento devido à resistência do ar. Para baixas velocidades, a dependência linear predomina enquanto para altas velocidades predomina a dependência quadrática.
 
@@ -68,17 +67,65 @@ onde $F_V$ é a força de atrito devido à viscosidade, $C_V$ é um coeficiente 
 
 O amortecimento em altas velocidades pode ser descrito por\cite{drag1_wiki}:
 $$F_D=-\frac{1}{2}\rho A C_D v^2$$
-onde $F_D$ é o arrasto quadrático, $\rho$ é a densidade do ar, $A$ é a área de referência, $C_D$ é o coeficiente de arrasto e $v$ a velocidade do corpo.
+onde $F_D$ é o arrasto quadrático, $\rho$ é a densidade do fluido, $A$ é a área de referência, $C_D$ é o coeficiente de arrasto e $v$ a velocidade do corpo.
 
 \section{Método}
-% Aqui o Método 
-%Detalhes sobre o método utilizado ,
-%procure ao final do texto a referencia a esta bibliografia.
-%demonstrações de porque ele funciona.  Limites analíticos, etc.
+Para comparar estes dois tipos de atrito, foi utilizado um modelo em uma dimensão, em que um corpo é arremessado para cima imerso em um fluido hipotético.
 
+Utilizando gráficos $x\times t$, podem ser comparados os tempos de subida e descida dos modelos.
+
+Para o cálculo de cada percurso, 
+foi utilizado o algoritmo de Runge-Kutta de 4a ordem, considerando
+$$F_{resultante}=F_V+F_D+F_peso$$
 
 \section{Resultados}
- Aqui os resultados, sua interpretação.
+Com baixa velocidade e coeficientes 
+
+Inicialmente, foram comparados os resultados de cada modelo para três diferentes velocidades (figuras
+\ref{v2-visc0.1-quad0.1.eps},
+\ref{v10-visc0.1-quad0.1.eps} e
+\ref{v100-visc0.1-quad0.1.eps}).
+
+Como esperado, quanto mais alta a velocidade, maior a influência da dependência quadrática da velocidade.
+Nota-se também que desprezar a influência da viscosidade pode fornecer resultados imprecisos, visto que nos dois primeiros gráficos ela não é desprezível.
+
+\ref{v10-visc0.1-quad0.2.eps}
+\ref{v10-visc0.2-quad0.1.eps}
+
+\begin{figure}[htbp!]
+  \caption{Velocidade baixa \\ v=2 visc=0.1 quad=0.1}
+  \label{v2-visc0.1-quad0.1.eps}
+  \centering
+    \resizebox{8.0cm}{!}{\includegraphics{v2-visc0.1-quad0.1.eps}}
+\end{figure}
+
+\begin{figure}[htbp!]
+  \caption{v=10 visc=0.1 quad=0.1}
+  \label{v10-visc0.1-quad0.1.eps}
+  \centering
+    \resizebox{8.0cm}{!}{\includegraphics{v10-visc0.1-quad0.1.eps}}
+\end{figure}
+
+\begin{figure}[htbp!]
+  \caption{v=100 visc=0.1 quad=0.1}
+  \label{v100-visc0.1-quad0.1.eps}
+  \centering
+    \resizebox{8.0cm}{!}{\includegraphics{v100-visc0.1-quad0.1.eps}}
+\end{figure}
+
+\begin{figure}[htbp!]
+  \caption{v10 visc=0.1 quad=0.2}
+  \label{v10-visc0.1-quad0.2.eps}
+  \centering
+    \resizebox{8.0cm}{!}{\includegraphics{v10-visc0.1-quad0.2.eps}}
+\end{figure}
+
+\begin{figure}[htbp!]
+  \caption{v=10 visc=0.2 quad=0.1}
+  \label{v10-visc0.2-quad0.1.eps}
+  \centering
+    \resizebox{8.0cm}{!}{\includegraphics{v10-visc0.2-quad0.1.eps}}
+\end{figure}
 
 % Aqui incluimos uma figura
 % Para testar este comando devem criar uma figura em formato
