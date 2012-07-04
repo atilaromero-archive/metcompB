@@ -4,7 +4,7 @@ import sys
 
 def mkfunc_a(cvisc,cquad,fpeso):
     def a(x,v):
-        return -(cvisc*v +cquad*v*v+fpeso) 
+        return -(cvisc*v +cquad*v*abs(v)+fpeso) 
     return a
 
 def main(x,v,cvisc,cquad,fpeso,dt):

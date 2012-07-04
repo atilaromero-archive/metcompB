@@ -76,81 +76,61 @@ Utilizando gráficos $x\times t$, podem ser comparados os tempos de subida e des
 
 Para o cálculo de cada percurso, 
 foi utilizado o algoritmo de Runge-Kutta de 4a ordem, considerando
-$$F_{resultante}=F_V+F_D+F_peso$$
+$$F_{resultante}=F_V+F_D+F_{peso}$$
 
 \section{Resultados}
-Com baixa velocidade e coeficientes 
-
-Inicialmente, foram comparados os resultados de cada modelo para três diferentes velocidades (figuras
-\ref{v2-visc0.1-quad0.1.eps},
-\ref{v10-visc0.1-quad0.1.eps} e
-\ref{v100-visc0.1-quad0.1.eps}).
-
-Como esperado, quanto mais alta a velocidade, maior a influência da dependência quadrática da velocidade.
-Nota-se também que desprezar a influência da viscosidade pode fornecer resultados imprecisos, visto que nos dois primeiros gráficos ela não é desprezível.
-
-\ref{v10-visc0.1-quad0.2.eps}
-\ref{v10-visc0.2-quad0.1.eps}
+Com baixa velocidade e coeficientes pequenos, o modelo sem atrito fornece uma boa aproximação, conforme pode ser observado na figura \ref{v2-visc0.1-quad0.1.eps}.
 
 \begin{figure}[htbp!]
-  \caption{Velocidade baixa \\ v=2 visc=0.1 quad=0.1}
+  \caption{v=2 visc=0.1 quad=0.1}
   \label{v2-visc0.1-quad0.1.eps}
   \centering
-    \resizebox{8.0cm}{!}{\includegraphics{v2-visc0.1-quad0.1.eps}}
+  \rotatebox{-90}{\resizebox{8.0cm}{!}{\includegraphics{v2-visc0.1-quad0.1.eps}}}
 \end{figure}
 
+Em baixa velocidade, o coeficiente de viscosidade passou a ser relevante ao ser aumentado (figura \ref{v2-visc0.5-quad0.1.eps}).
+
 \begin{figure}[htbp!]
-  \caption{v=10 visc=0.1 quad=0.1}
-  \label{v10-visc0.1-quad0.1.eps}
+  \caption{v=2 visc=0.5 quad=0.1}
+  \label{v2-visc0.5-quad0.1.eps}
   \centering
-    \resizebox{8.0cm}{!}{\includegraphics{v10-visc0.1-quad0.1.eps}}
+  \rotatebox{-90}{\resizebox{8.0cm}{!}{\includegraphics{v2-visc0.5-quad0.1.eps}}}
 \end{figure}
+
+Em altas velocidades, o modelo de arrasto quadrático se sobressaiu, como esperado (figura \ref{v100-visc0.1-quad0.1.eps}).
 
 \begin{figure}[htbp!]
   \caption{v=100 visc=0.1 quad=0.1}
   \label{v100-visc0.1-quad0.1.eps}
   \centering
-    \resizebox{8.0cm}{!}{\includegraphics{v100-visc0.1-quad0.1.eps}}
+  \rotatebox{-90}{\resizebox{8.0cm}{!}{\includegraphics{v100-visc0.1-quad0.1.eps}}}
 \end{figure}
+
+Utilizando uma velocidade intermediária e aumentando a viscosidade, foi observado que existem situações onde a combinação dos dois modelos não pode ser substituída por apenas um deles (figura \ref{v10-visc0.5-quad0.1.eps}).
 
 \begin{figure}[htbp!]
-  \caption{v10 visc=0.1 quad=0.2}
-  \label{v10-visc0.1-quad0.2.eps}
+  \caption{v=10 visc=0.5 quad=0.1}
+  \label{v10-visc0.5-quad0.1.eps}
   \centering
-    \resizebox{8.0cm}{!}{\includegraphics{v10-visc0.1-quad0.2.eps}}
+  \rotatebox{-90}{\resizebox{8.0cm}{!}{\includegraphics{v10-visc0.5-quad0.1.eps}}}
 \end{figure}
 
-\begin{figure}[htbp!]
-  \caption{v=10 visc=0.2 quad=0.1}
-  \label{v10-visc0.2-quad0.1.eps}
-  \centering
-    \resizebox{8.0cm}{!}{\includegraphics{v10-visc0.2-quad0.1.eps}}
-\end{figure}
-
-% Aqui incluimos uma figura
-% Para testar este comando devem criar uma figura em formato
-% postscript encapsulado (eps) e deve ter o mesmo nome que aparece entre chaves
-% no caso ``fig.eps'' 
 
 \section{Conclusões}
-Recolocar resumidamente o problema, os resultados, as comparações
-trabalhos e as perspectivas futuras que o trabalho abre.
-
-{\color{red} Este é um modelo geral, quando for utilizá-lo para um trabalho
-específico leve em consideração as necesidades desse trabalho,
-cuidando de omitir ou comentar com \% \% as seções que não
-se apliquem.}
+De maneira geral, o modelo de arrasto quadrático foi o que mais se sobressaiu:
+caso fosse necessário utilizar apenas um dos dois modelos, seria aconselhável dar preferência ao modelo quadrático sempre que o meio não fosse excessivamente viscoso.
+Mas a utilização de um modelo combinado é a melhor opção, uma vez que foi mostrado que existem circunstâncias em que apenas um deles não é suficiente.
 
 \begin{thebibliography}{99}
-
-\bibitem{drag1_wiki}
-Drag (physics), 
-Disponível em: http://en.wikipedia.org/wiki/Drag\_(physics).
-Acesso em 03/07/2012.
 
 \bibitem{stokes_wiki}
 Stokes' law, 
 Disponível em: http://en.wikipedia.org/wiki/Stokes'\_law.
+Acesso em 03/07/2012.
+
+\bibitem{drag1_wiki}
+Drag (physics), 
+Disponível em: http://en.wikipedia.org/wiki/Drag\_(physics).
 Acesso em 03/07/2012.
 
 \end{thebibliography}
