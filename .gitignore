@@ -3,3 +3,8 @@ teste01/trab
 trab02/t2_atilaromero.tgz
 trab02/plot.eps
 trab02/fit.log
+*.eps
+*.dat
+*.data
+*.pyc
+*.tar.gz
