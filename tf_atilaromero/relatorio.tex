@@ -1,0 +1,139 @@
+% ------------------------------------------------------------- 
+% Arquivo :  relatório modelo                                        
+% ------------------------------------------------------------- 
+% O percentual(%) serve para incluir comentários: 
+% tudo o que fica à direita dele não é interpretado pelo LaTex
+% Linhas e espaços em branco também **NÃO** são
+% interpretadas pelo LaTex
+
+%% As intruções seguintes são o cabeçalho e devem estar antes do
+%% \begin{document}
+
+%\documenclass: mandatorio, indica o tipo/formato de documento
+\documentclass[brazilian,12pt,a4paper,final]{article}
+% tamanhos de fontes: 10pt, 11pt ou 12pt
+% opções de estilo (padrões): article, report, book, slide, letter (artigo, relatorio, livro, apresentação de slides, carta)
+
+
+
+
+%% Pacotes extras (opcionais):
+
+% *babel* contem as regras de ifenização
+\usepackage[brazil]{babel}
+
+% *t1enc* permite o reconhecimento dos acentos inseridos com o teclado
+%\usepackage{t1enc}
+
+% *inputenc* com opção *utf8* permite reconhecimento dos caracteres com codificação UTF8, que é padrão dos esditores de texto no Linux. Isso permite reconhecimento automático de acentuação.
+\usepackage[utf8]{inputenc}
+
+
+% *graphicx* é para incluir figuras em formato eps 
+\usepackage{graphicx} % para produzir PDF diretamente reescrever esta linha assim: \usepackage[pdftex]{graphicx}
+
+% *color* fontes soloridas
+\usepackage{color}
+%%% fim do cabecalho %%%
+
+\pagestyle{empty}
+\title{Métodos Computacionais da Física B \\ Amortecimento em um fluido}
+\author{Aluno: Átila Leites Romero - Matrícula: 144679 \\ IF-UFRGS}
+
+\begin{document}
+\maketitle
+%\begin{abstract}
+%Descrever de forma sintética o problema 
+%e os resultados.
+% as quebras de linha coma a de cima não são interpretadas
+% para forzar quebra de linha deve ser deixada uma linha em branco
+%\end{abstract}
+
+%Abaixo podem ver como se deve colocar letras acentuadas ou latinas se
+%o pacote *t1enc* não dfosse usado 
+\section{Introdução} 
+% Aqui a Introdução \c{c} e \~a  é a forma standar  de escrever
+% carateres ASCII extendidos (acentos, etc), porem com o pacote t1enc
+% declarado acima podemos escrever diretamente ç em lugar d \c{c}, etc
+Neste trabalho, são comparados dois modelos para o amortecimento de um corpo em movimento em um fluido, ambos dependentes da velocidade, porém um dependentee linearmente e o outro quadraticamente. Os modelos também podem ser combinados em um único.
+
+Um exemplo de sistema físico onde isto ocorre é no amortecimento devido à resistência do ar. Para baixas velocidades, a dependência linear predomina enquanto para altas velocidades predomina a dependência quadrática.
+
+Em algumas situações, considera-se apenas o fator predominante. No entanto, esta aproximação pode não fornecer resultados precisos em situações intermediárias. Além disto, é difícil tratar analiticamente a parte quadrática, mesmo quando isoladamente.
+
+O amortecimento em baixas velocidades pode ser descrito por\cite{stokes_wiki}:
+$$F_V=-C_V v$$
+onde $F_V$ é a força de atrito devido à viscosidade, $C_V$ é um coeficiente que depende da viscosidade do fluido e das dimensões do corpo e $v$ é a velocidade do corpo. Para pequenos objetos esféricos, $b=6\pi \eta r$, onde $\eta$ é o coeficiente de viscosidade e $r$ o raio.
+
+O amortecimento em altas velocidades pode ser descrito por\cite{drag1_wiki}:
+$$F_D=-\frac{1}{2}\rho A C_D v^2$$
+onde $F_D$ é o arrasto quadrático, $\rho$ é a densidade do fluido, $A$ é a área de referência, $C_D$ é o coeficiente de arrasto e $v$ a velocidade do corpo.
+
+\section{Método}
+Para comparar estes dois tipos de atrito, foi utilizado um modelo em uma dimensão, em que um corpo é arremessado para cima imerso em um fluido hipotético.
+
+Utilizando gráficos $x\times t$, podem ser comparados os tempos de subida e descida dos modelos.
+
+Para o cálculo de cada percurso, 
+foi utilizado o algoritmo de Runge-Kutta de 4a ordem, considerando
+$$F_{resultante}=F_V+F_D+F_{peso}$$
+
+\section{Resultados}
+Com baixa velocidade e coeficientes pequenos, o modelo sem atrito fornece uma boa aproximação, conforme pode ser observado na figura \ref{v2-visc0.1-quad0.1.eps}.
+
+\begin{figure}[htbp!]
+  \caption{v=2 visc=0.1 quad=0.1}
+  \label{v2-visc0.1-quad0.1.eps}
+  \centering
+  \rotatebox{-90}{\resizebox{8.0cm}{!}{\includegraphics{v2-visc0.1-quad0.1.eps}}}
+\end{figure}
+
+Em baixa velocidade, o coeficiente de viscosidade passou a ser relevante ao ser aumentado (figura \ref{v2-visc0.5-quad0.1.eps}).
+
+\begin{figure}[htbp!]
+  \caption{v=2 visc=0.5 quad=0.1}
+  \label{v2-visc0.5-quad0.1.eps}
+  \centering
+  \rotatebox{-90}{\resizebox{8.0cm}{!}{\includegraphics{v2-visc0.5-quad0.1.eps}}}
+\end{figure}
+
+Em altas velocidades, o modelo de arrasto quadrático se sobressaiu, como esperado (figura \ref{v100-visc0.1-quad0.1.eps}).
+
+\begin{figure}[htbp!]
+  \caption{v=100 visc=0.1 quad=0.1}
+  \label{v100-visc0.1-quad0.1.eps}
+  \centering
+  \rotatebox{-90}{\resizebox{8.0cm}{!}{\includegraphics{v100-visc0.1-quad0.1.eps}}}
+\end{figure}
+
+Utilizando uma velocidade intermediária e aumentando a viscosidade, foi observado que existem situações onde a combinação dos dois modelos não pode ser substituída por apenas um deles (figura \ref{v10-visc0.5-quad0.1.eps}).
+
+\begin{figure}[htbp!]
+  \caption{v=10 visc=0.5 quad=0.1}
+  \label{v10-visc0.5-quad0.1.eps}
+  \centering
+  \rotatebox{-90}{\resizebox{8.0cm}{!}{\includegraphics{v10-visc0.5-quad0.1.eps}}}
+\end{figure}
+
+
+\section{Conclusões}
+De maneira geral, o modelo de arrasto quadrático foi o que mais se sobressaiu:
+caso fosse necessário utilizar apenas um dos dois modelos, seria aconselhável dar preferência ao modelo quadrático sempre que o meio não fosse excessivamente viscoso.
+Mas a utilização de um modelo combinado é a melhor opção, uma vez que foi mostrado que existem circunstâncias em que apenas um deles não é suficiente.
+
+\begin{thebibliography}{99}
+
+\bibitem{stokes_wiki}
+Stokes' law, 
+Disponível em: http://en.wikipedia.org/wiki/Stokes'\_law.
+Acesso em 03/07/2012.
+
+\bibitem{drag1_wiki}
+Drag (physics), 
+Disponível em: http://en.wikipedia.org/wiki/Drag\_(physics).
+Acesso em 03/07/2012.
+
+\end{thebibliography}
+
+\end{document}
+
